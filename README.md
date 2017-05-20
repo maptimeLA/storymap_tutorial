@@ -62,6 +62,15 @@ This part is accessing historic maps provided by the [David Rumsey Collection](h
 ![image](https://cloud.githubusercontent.com/assets/6407796/26274889/80873d86-3d09-11e7-9026-b59be4c4f356.png)
 7. And then goto your map code and either replace the layer or add another layer.
 
-
+#### Additional Historic Map Resources
+* [Map Warper, Open Source Georeferencer](http://mapwarper.net/)
+* [TopoView | USGS](https://ngmdb.usgs.gov/maps/TopoView/)
+* [Old Maps of Los Angeles](http://www.oldmapsonline.org/en/Los_Angeles,_California)
+* [LA Public Library Online Map Collection](https://www.lapl.org/collections-resources/visual-collections/map-collection)
+* [CSUN Online Resources](http://www.csun.edu/geography-map-library/online-resources)
+* [UCLA Map Guide](http://guides.library.ucla.edu/c.php?g=180224&p=1186739)
+* [UCLA HyperCities](http://www.hypercities.com/maplibrary/maplibrary.html)
+* [Big Map Blog](http://www.bigmapblog.com/)
+* [Mapping Inequality, University of Richmond](https://dsl.richmond.edu/panorama/redlining/#loc=10/34.0418/-118.3859&opacity=0.8&city=los-angeles-ca)
 
 
