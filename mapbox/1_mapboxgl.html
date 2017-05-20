@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<style>
+#map {
+    position: fixed;
+    width:100%;
+}
+</style>
+
+<div id='map'></div>
+
+<script>
+//This is a variable that contains an access key to use the services from Mapbox. Please make sure you create an account and replace what's in the quotes with your own key"
+//The key shown here is a one-time use key for this tutorial. It will expire on 7/1/2017
+mapboxgl.accessToken = 'pk.eyJ1IjoiY3J1emluNzN2dyIsImEiOiJjajJ3djc3ZHAwMHh1MzhxcGY2cmtmMjF5In0.wuIHWedRimzqE_NjYh3x0g';
+
+//This function create the map to load onto your web browser
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    center: [-118.2680, 34.0622],
+    zoom: 9.48,
+    bearing: 0,
+    pitch: 0,
+    hash:true
+});
+
+</script>
+
+</body>
+</html>

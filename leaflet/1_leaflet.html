@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<style>
+#map {
+    position: fixed;
+    width:100%;
+}
+</style>
+
+<div id='map'></div>
+
+<script>
+//This function create the map to load onto your web browser
+var map = L.map('map').setView([34.0622, -118.2680], 13);
+
+//This function adds a layer to the map, this layer would be added first, known as a base layer. Additional layers can be added on top.    
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+//This function adds a tile layer from remote sources like the David Rumsey Map Collection, remove the "/*" at the beginning and "*/" at the end to activate.
+/*    
+L.tileLayer('http://maps.georeferencer.com/georeferences/236482959682/2017-02-20T14:25:19.132722Z/map/{z}/{x}/{y}.png?key=zfSXuPw8W8w4AymmpUlZ', {
+    attribution: '&copy; <a href="http://www.davidrumsey.com/luna/">David Rumsey Map Collection</a> GW Baist Map, 1921'
+}).addTo(map);
+*/
+
+//Here are other tiles you can switch to, make sure you change the attribution to the source.
+//Stamen Toner-Lite | http://d.tile.stamen.com/toner-lite/{z}/{x}/{y}.png | <a target="_top" href="http://stamen.com">Stamen Design, under CC BY 3.0, data by OSM</a>
+//Stamen Watercolor | http://d.tile.stamen.com/watercolor/{z}/{x}/{y}.png | <a href="http://stamen.com">Stamen Design under CC BY 3.0, data by OSM</a>
+</script>
+
+</body>
+</html>
