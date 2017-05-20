@@ -44,3 +44,24 @@ You can try out the maps here,
 * [1_mapboxgl](mapbox/1_mapboxgl.html) | This is a very basic mapboxGL map, if you look at the code, you can see that just a couple lines of code can get you a map and it's very similiar to Leaflet, except mapboxGL has many new features. To run the map, you need to copy `https://<username>.github.io/storymap_tutorial/mapbox/1_mapboxgl.html`, paste it into your web browser and change `<username>` with your username.
 * [2_storymapboxgl](mapbox/2_storymapboxgl.html) | This is a very basic mapboxGL map, if you look at the code, you can see that just a couple lines of code can get you a map and it's very similiar to Leaflet, except mapboxGL has many new features. To run the map, you need to copy `https://<username>.github.io/storymap_tutorial/mapbox/2_storymapboxgl.html`, paste it into your web browser and change `<username>` with your username.
 
+### Using Georeferenced maps
+If you're new to geoferencing, or digitizing scanned maps, like historic maps for geospatial uses, [check out slide show.](http://slides.com/omarureta/maptimela_10#/)
+
+This part is accessing historic maps provided by the [David Rumsey Collection](http://www.davidrumsey.com/luna/servlet/view/search/who/G.%2BW.%2BBaist?q=los+angeles&sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No) which has a very nice collection of historic maps, many of them are georeferenced for your use and the tiles are hosted and served from the collection. Meaning all you need to do is find a map you like that is georeferenced and get the link to add it your map code, and you have an historic map! Other cool features from the Collection, is an online tool for you to georeference maps in their collection.
+
+#### Adding a georeferenced map from the David Rumsey Collection
+1. The David Rumsey Collection has a nice collection of scanned maps made by the GW Baist Company, which are real estate surveys from the early 1920's.
+2. Let's choose this map, showing a large train yard which is now the Los Angeles State Historic Park, you can see the LA River and Solano Canyon.
+![image](https://cloud.githubusercontent.com/assets/6407796/26274840/5827e08a-3d08-11e7-9485-a7c714bce54b.png)
+3. Click on the brown button labeled `VIEW IN GEOREFERENCER` to load a new window where you will see the map as an overlay on a basemap.
+4. From here you select the `What next? button at the lower right corner
+![image](https://cloud.githubusercontent.com/assets/6407796/26274868/183dce66-3d09-11e7-8dc2-32fda0f191c3.png)
+5. From there you will need to get the links so you can add it to your map. Select the `Get links` button
+![image](https://cloud.githubusercontent.com/assets/6407796/26274886/6139e2bc-3d09-11e7-89e3-b404eef0d64c.png)
+6. Select and copy the link in the area labeled `XYZ Link`
+![image](https://cloud.githubusercontent.com/assets/6407796/26274889/80873d86-3d09-11e7-9026-b59be4c4f356.png)
+7. And then goto your map code and either replace the layer or add another layer.
+
+
+
+
