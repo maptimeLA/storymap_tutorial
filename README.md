@@ -1,4 +1,5 @@
 # Story Maps!
+![image](https://cloud.githubusercontent.com/assets/6407796/26274400/2210fd38-3cfe-11e7-941e-aa3172367c69.png)
 Use this repo to make ready to go story maps with either Leaflet or MapboxGL JS mapping libraries.
 
 ### What the difference between Leaflet and Mapbox?
@@ -32,5 +33,11 @@ Use this repo to make ready to go story maps with either Leaflet or MapboxGL JS 
 12. Now we need copy this link and change it at the front page, know as the `readme`. Copy the link, scroll up and select the `storymap_tutorial` name next to your username. This will take you to the readme.
 13. At the top of the page you will see `Demonstration Map https://maptimela.github.io/storymap` this needs to be updated with your link. To change it click on the edit button on the far right of the page and replace the link with yours and save.
 14. Now you have a link to a live web map you can modify! Click on it and see a storymap of LA! (Note: It may take Github a minute or so to reflect the changes to your account, the map may not load. Give it some time and it should appear.)
+15. This particular webmap `index.html` is using the mapboxGL javascript mapping library.
 
+### To Raster or to Vector?
+You will notice in your repo, two folders named `leaflet` and `mapbox`, these contain example maps using these libraries.
+
+You can try out the maps here,
+* [1_leaflet](leaflet/1_leaflet.html) | This is a very basic map, if you look at the code, you can see that just a couple lines of code can get you a map. [1_leaflet](/docs/leaflet/1_leaflet.html)
 
