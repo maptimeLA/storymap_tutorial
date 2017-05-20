@@ -59,6 +59,7 @@ This part is accessing historic maps provided by the [David Rumsey Collection](h
 5. From there you will need to get the links so you can add it to your map. Select the `Get links` button
 ![image](https://cloud.githubusercontent.com/assets/6407796/26274886/6139e2bc-3d09-11e7-89e3-b404eef0d64c.png)
 6. Select and copy the link in the area labeled `XYZ Link`
+
 ![image](https://cloud.githubusercontent.com/assets/6407796/26274889/80873d86-3d09-11e7-9026-b59be4c4f356.png)
 7. And then goto your map code and either replace the layer or add another layer.
 
