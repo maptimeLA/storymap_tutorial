@@ -182,7 +182,28 @@ map.on('click', function (e) {
         "zoom: "+map.getZoom()+",\n"+
         "pitch: "+map.getPitch()
     );
-});    
+});
+
+//This function loads a raster tile layer onto the map
+//To turn on this function, remove the "/*" at the beginning of the function and a "*/" at the end. This will make the function work.
+
+/*
+map.on('load', function(){
+    map.addSource('raster', {
+        type: "raster",
+        tiles: [
+            "http://maps.georeferencer.com/georeferences/236482959682/2017-02-20T14:25:19.132722Z/map/{z}/{x}/{y}.png?key=zfSXuPw8W8w4AymmpUlZ" //This is the area for your georeferenced link
+        ],
+        tileSize: 256
+    });
+
+    map.addLayer({
+        'id': 'baist',
+        'type': 'raster',
+        'source': 'raster'
+    })
+})
+*/
 
 </script>
 
