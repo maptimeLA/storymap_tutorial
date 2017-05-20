@@ -39,5 +39,8 @@ Use this repo to make ready to go story maps with either Leaflet or MapboxGL JS 
 You will notice in your repo, two folders named `leaflet` and `mapbox`, these contain example maps using these libraries.
 
 You can try out the maps here,
-* [1_leaflet](leaflet/1_leaflet.html) | This is a very basic map, if you look at the code, you can see that just a couple lines of code can get you a map. [1_leaflet](/docs/leaflet/1_leaflet.html)
+* [1_leaflet](leaflet/1_leaflet.html) | This is a very basic map, if you look at the code, you can see that just a couple lines of code can get you a map. To run the map, you need to copy `https://<username>.github.io/storymap_tutorial/leaflet/1_leaflet.html`, paste it into your web browser and change `<username>` with your username.
+* [2_leaflet](leaflet/2_leaflet.html) | This is a leaflet map with additional code to make it into a storymap. You can modify the code, and the text to make your own. To run the map, you need to copy `https://<username>.github.io/storymap_tutorial/leaflet/2_leaflet.html`, paste it into your web browser and change `<username>` with your username.
+* [1_mapboxgl](mapbox/1_mapboxgl.html) | This is a very basic mapboxGL map, if you look at the code, you can see that just a couple lines of code can get you a map and it's very similiar to Leaflet, except mapboxGL has many new features. To run the map, you need to copy `https://<username>.github.io/storymap_tutorial/mapbox/1_mapboxgl.html`, paste it into your web browser and change `<username>` with your username.
+* [2_storymapboxgl](mapbox/2_storymapboxgl.html) | This is a very basic mapboxGL map, if you look at the code, you can see that just a couple lines of code can get you a map and it's very similiar to Leaflet, except mapboxGL has many new features. To run the map, you need to copy `https://<username>.github.io/storymap_tutorial/mapbox/2_storymapboxgl.html`, paste it into your web browser and change `<username>` with your username.
 
