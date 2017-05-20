@@ -29,5 +29,8 @@ Use this repo to make ready to go story maps with either Leaflet or MapboxGL JS 
 10. In the `Source` option, select master branch and hit save.
 ![image](https://cloud.githubusercontent.com/assets/6407796/26274336/800bc0d2-3cfc-11e7-9db4-d4858a2283c2.png)
 11. The page will reload and scroll back down to the `Github Pages` section, you will see a note that says, `Your site is ready to be published at...' with a link. This is your link to your pages which you can hand out to friends and family.
+12. Now we need copy this link and change it at the front page, know as the `readme`. Copy the link, scroll up and select the `storymap_tutorial` name next to your username. This will take you to the readme.
+13. At the top of the page you will see `Demonstration Map https://maptimela.github.io/storymap` this needs to be updated with your link. To change it click on the edit button on the far right of the page and replace the link with yours and save.
+14. Now you have a link to a live web map you can modify! Click on it and see a storymap of LA! (Note: It may take Github a minute or so to reflect the changes to your account, the map may not load. Give it some time and it should appear.)
 
 
