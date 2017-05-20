@@ -14,5 +14,7 @@ Use this repo to make ready to go story maps with either Leaflet or MapboxGL JS 
 
 #### Steps to have github host webmaps
 1. In order for you to host maps on github you need an [account](https://github.com/)
-2. Log in to your account and come back to this repository (A repository is used to organize a single project, they can contain folders, files, images, datasets, pretty much anything you need for your project). In fact you are at the repository right now!
-3. We need to  `fork` this repository to your account, because right now its being hosted through maptimeLA's account.
+2. Log in to your account and come back to this repository (A repository aka repo is used to organize a single project, they can contain folders, files, images, datasets, pretty much anything you need for your project). In fact you are at the repository right now!
+3. We need to  `fork` this repository to your account, because right now its being hosted through maptimeLA's account. Creating a `fork` is producing a personal copy of someone else's project in this case maptimeLA's. [Want to know more about forking?](https://guides.github.com/activities/forking/)
+4. Fork this repo by clicking on the button labeled fork.
+![Forking](https://github-images.s3.amazonaws.com/help/bootcamp/Bootcamp-Fork.png)
