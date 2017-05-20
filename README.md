@@ -2,6 +2,9 @@
 ![image](https://cloud.githubusercontent.com/assets/6407796/26274400/2210fd38-3cfe-11e7-941e-aa3172367c69.png)
 Use this repo to make ready to go story maps with either Leaflet or MapboxGL JS mapping libraries.
 
+### Watts curfew zone
+http://latimes-graphics-media.s3.amazonaws.com/jon-temp/watts-curfew-map.tif.zip
+
 ### What the difference between Leaflet and Mapbox?
 * [Leaflet](http://leafletjs.com/) is a robust mapping library to load rasters tiles. It's development has been instrumental in bringing open source to maps and anyone wanting to make a map.
 * [MapboxGL](https://www.mapbox.com/mapbox-gl-js/api/) is the next stage in developing web maps as it uses vector tiles and many awesome features like handling large datasets and styling maps on the client side.
