@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<style>
+#map {
+    position: fixed;
+    width:50%;
+}
+#features {
+    width: 50%;
+    margin-left: 50%;
+    font-family: sans-serif;
+    overflow-y: scroll;
+    background-color: #fafafa;
+}
+section {
+    padding:  25px 50px;
+    line-height: 25px;
+    border-bottom: 1px solid #ddd;
+    opacity: 0.25;
+    font-size: 13px;
+}
+section.active {
+    opacity: 1;
+}
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 400px;
+}
+</style>
+
+<div id='map'></div>
+<div id='features'>
+    <section id='losangeles' class='active'>
+        <h3>Welcome to Los Angeles</h3>
+        <p>This is Los Angeles</p>
+    </section>
+    <section id='boyleheights'>
+        <h3>The neighborhood of Boyle Heights</h3>
+        <p>Let's head down to the nieghborhood of Boyle Heights</p>
+    </section>
+    <section id='centralave'>
+        <h3>Down Central Ave</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Central_Avenue_jazz_marker_-_Los_Angeles.jpg/320px-Central_Avenue_jazz_marker_-_Los_Angeles.jpg">
+        <p>Or maybe check LA's Jazz history on Central Ave. Image Source - Wikipedia</p>
+    </section>
+    <section id='chavezravine'>
+        <h3>Remembering Chavez Ravine</h3>
+        <p>Chavez Ravine is a shallow L-shaped canyon located in Los Angeles, California, United States, partially in the Elysian Park neighborhood. It sits in large promontory of hills north of downtown Los Angeles and was known in the 1860s as the "Stone Quarry Hills" which had other smaller ravines such as Sulphur Ravine, Cemetery Ravine, Solano Canyon and Reservoir Ravine.[1] It is next to Dodger Stadium, a baseball venue that opened in 1962. The name Chavez Ravine can be used to mean either the actual ravine itself in a narrow sense or sometimes in a broader sense the entire promontory and surrounding ravines, and is also used to refer to the stadium. Dodger Stadium was constructed by knocking down the ridge which separated the nearby Sulfur and Cemetery Ravines and filling those two ravines in. Palo Verde Elementary School was buried in the process. Chavez Ravine was named for Julian Chavez, a Los Angeles councilman in the 19th century. Chavez originally purchased the land in the Elysian Park area, which eventually grew to about 315 acres, in 1844. Nearby "Cemetery Ravine" was named after old Calvary, the first cemetery of Los Angeles.</p><a href="https://en.wikipedia.org/wiki/Chavez_Ravine">Source - Wikipedia</a>
+    </section>
+    <section id='watts'>
+        <h3>Watts Tower</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Watts-towers.jpg/396px-Watts-towers.jpg">
+        <p>The Watts Towers, Towers of Simon Rodia, or Nuestro Pueblo ("our town") are a collection of 17 interconnected sculptural structures within the Simon Rodia State Historic Park in the Watts community of Los Angeles. The tallest of the towers reaches a height of over 99 feet (30 m). The towers and walls were designed and built by Sabato ("Simon") Rodia (1879–1965), an Italian immigrant construction worker and tile mason, over a period of 33 years, from 1921 to 1954. The work is an example of outsider art and Italian-American naïve art.</p><a href="https://en.wikipedia.org/wiki/Watts_Towers">Source - Wikipedia</a>
+    </section>
+    <section id='unionstation'>
+        <h3>All aboard!</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Union_Station_profile%2C_LA%2C_CA%2C_jjron_22.03.2012.jpg/320px-Union_Station_profile%2C_LA%2C_CA%2C_jjron_22.03.2012.jpg">
+        <p>We leave off at Union Station, as you can see you can tell how accessible these tools are to tell your story.</p>
+        <small id="citation">
+            Github repo <a href='http://www.gutenberg.org/files/2346/2346-h/2346-h.htm'>Story Map Tutorial</a>
+        </small>
+    </section>
+</div>
+<script>
+
+//This function create the map to load onto your web browser
+var map = L.map('map').setView([34.0622, -118.2680], 13);
+
+//This function adds a layer to the map, this layer would be added first, known as a base layer. Additional layers can be added on top.    
+L.tileLayer('http://d.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
+    attribution: '<a target="_top" href="http://stamen.com">Stamen Design, under CC BY 3.0, data by OSM</a>'
+}).addTo(map);
+
+//This function adds a tile layer from remote sources like the David Rumsey Map Collection, remove the "/*" at the beginning and "*/" at the end to activate.
+/*    
+L.tileLayer('http://maps.georeferencer.com/georeferences/236482959682/2017-02-20T14:25:19.132722Z/map/{z}/{x}/{y}.png?key=zfSXuPw8W8w4AymmpUlZ', {
+    attribution: '&copy; <a href="http://www.davidrumsey.com/luna/">David Rumsey Map Collection</a> GW Baist Map, 1921'
+}).addTo(map);
+*/
+
+//Here are other tiles you can switch, make sure you change the attribution to the source.
+//Stamen Toner-Lite | http://d.tile.stamen.com/toner-lite/{z}/{x}/{y}.png | <a target="_top" href="http://stamen.com">Stamen Design, under CC BY 3.0, data by OSM</a>
+//Stamen Watercolor | http://d.tile.stamen.com/watercolor/{z}/{x}/{y}.png | <a href="http://stamen.com">Stamen Design under CC BY 3.0, data by OSM</a>
+
+//This are the locations for your map to move along with your story
+//This is variable created an object called an JSON, you can add and remove chapters to the story. Make sure you reflect the changes in the sections with the text of your story.    
+var chapters = {
+    'losangeles': {
+        center: [34.0622, -118.2680],
+        zoom: 9,
+    },
+    'boyleheights': {
+        center: [34.0323, -118.2120],
+        zoom: 13,
+    },
+    'centralave': {
+        center: [34.00672273556911, -118.25617347611393],
+        zoom: 18,
+    },
+    'chavezravine': {
+        center: [34.081204647758256, -118.23789479255632],
+        zoom: 15
+    },
+    'watts': {
+        center: [33.938957715132304, -118.24182004928838],
+        zoom: 17
+    },
+    'unionstation': {
+        center: [34.05573545250901, -118.23536853348772],
+        zoom: 16
+    }
+};
+
+//Function to run the story    
+// On every scroll event, check which element is on screen
+window.onscroll = function() {
+    var chapterNames = Object.keys(chapters);
+    for (var i = 0; i < chapterNames.length; i++) {
+        var chapterName = chapterNames[i];
+        if (isElementOnScreen(chapterName)) {
+            setActiveChapter(chapterName);
+            break;
+        }
+    }
+};
+
+var activeChapterName = 'losangeles'; //Change this to match the first chapter of your story
+function setActiveChapter(chapterName) {
+    if (chapterName === activeChapterName) return;
+
+    map.flyTo(chapters[chapterName].center, chapters[chapterName].zoom);
+
+    document.getElementById(chapterName).setAttribute('class', 'active');
+    document.getElementById(activeChapterName).setAttribute('class', '');
+
+    activeChapterName = chapterName;
+}
+
+function isElementOnScreen(id) {
+    var element = document.getElementById(id);
+    var bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+//End of function to run the story    
+    
+
+//This JS Function asks Mapbox to get the bearing/center/zoom/pitch of the mouse position when clicked.
+//To turn off this function, add a "/*" at the beginning of the function and a "*/" at the end. This will turn the function into a comment.
+map.on('click', function () {
+    // e.lngLat is the longitude, latitude geographical position of the event
+    var latlng = map.getCenter();
+    console.log(latlng);
+    prompt("Copy to clipboard: Ctrl+C, Enter",
+        "center: ["+latlng.lat+", "+latlng.lng+"],\n"+
+        "zoom: "+map.getZoom()+"\n"
+    );
+});   
+
+</script>
+
+</body>
+</html>

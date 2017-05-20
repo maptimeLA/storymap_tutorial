@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<style>
+#map {
+    position: fixed;
+    width:50%;
+}
+#features {
+    width: 50%;
+    margin-left: 50%;
+    font-family: sans-serif;
+    overflow-y: scroll;
+    background-color: #fafafa;
+}
+section {
+    padding:  25px 50px;
+    line-height: 25px;
+    border-bottom: 1px solid #ddd;
+    opacity: 0.25;
+    font-size: 13px;
+}
+section.active {
+    opacity: 1;
+}
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 400px;
+}
+</style>
+
+<div id='map'></div>
+<div id='features'>
+    <section id='losangeles' class='active'>
+        <h3>Welcome to Los Angeles</h3>
+        <p>This is Los Angeles</p>
+    </section>
+    <section id='boyleheights'>
+        <h3>The neighborhood of Boyle Heights</h3>
+        <p>Let's head down to the nieghborhood of Boyle Heights</p>
+    </section>
+    <section id='centralave'>
+        <h3>Down Central Ave</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Central_Avenue_jazz_marker_-_Los_Angeles.jpg/320px-Central_Avenue_jazz_marker_-_Los_Angeles.jpg">
+        <p>Or maybe check LA's Jazz history on Central Ave. Image Source - Wikipedia</p>
+    </section>
+    <section id='chavezravine'>
+        <h3>Remembering Chavez Ravine</h3>
+        <p>Chavez Ravine is a shallow L-shaped canyon located in Los Angeles, California, United States, partially in the Elysian Park neighborhood. It sits in large promontory of hills north of downtown Los Angeles and was known in the 1860s as the "Stone Quarry Hills" which had other smaller ravines such as Sulphur Ravine, Cemetery Ravine, Solano Canyon and Reservoir Ravine.[1] It is next to Dodger Stadium, a baseball venue that opened in 1962. The name Chavez Ravine can be used to mean either the actual ravine itself in a narrow sense or sometimes in a broader sense the entire promontory and surrounding ravines, and is also used to refer to the stadium. Dodger Stadium was constructed by knocking down the ridge which separated the nearby Sulfur and Cemetery Ravines and filling those two ravines in. Palo Verde Elementary School was buried in the process. Chavez Ravine was named for Julian Chavez, a Los Angeles councilman in the 19th century. Chavez originally purchased the land in the Elysian Park area, which eventually grew to about 315 acres, in 1844. Nearby "Cemetery Ravine" was named after old Calvary, the first cemetery of Los Angeles.</p><a href="https://en.wikipedia.org/wiki/Chavez_Ravine">Source - Wikipedia</a>
+    </section>
+    <section id='watts'>
+        <h3>Watts Tower</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Watts-towers.jpg/396px-Watts-towers.jpg">
+        <p>The Watts Towers, Towers of Simon Rodia, or Nuestro Pueblo ("our town") are a collection of 17 interconnected sculptural structures within the Simon Rodia State Historic Park in the Watts community of Los Angeles. The tallest of the towers reaches a height of over 99 feet (30 m). The towers and walls were designed and built by Sabato ("Simon") Rodia (1879–1965), an Italian immigrant construction worker and tile mason, over a period of 33 years, from 1921 to 1954. The work is an example of outsider art and Italian-American naïve art.</p><a href="https://en.wikipedia.org/wiki/Watts_Towers">Source - Wikipedia</a>
+    </section>
+    <section id='unionstation'>
+        <h3>All aboard!</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Union_Station_profile%2C_LA%2C_CA%2C_jjron_22.03.2012.jpg/320px-Union_Station_profile%2C_LA%2C_CA%2C_jjron_22.03.2012.jpg">
+        <p>We leave off at Union Station, as you can see you can tell how accessible these tools are to tell your story.</p>
+        <small id="citation">
+            Github repo <a href='http://www.gutenberg.org/files/2346/2346-h/2346-h.htm'>Story Map Tutorial</a>
+        </small>
+    </section>
+</div>
+<script>
+//This is a variable that contains an access key to use the services from Mapbox. Please make sure you create an account and replace what's in the quotes with your own key"
+//The key shown here is a one-time use key for this tutorial. It will expire on 7/1/2017
+mapboxgl.accessToken = 'pk.eyJ1IjoiY3J1emluNzN2dyIsImEiOiJjajJ3djc3ZHAwMHh1MzhxcGY2cmtmMjF5In0.wuIHWedRimzqE_NjYh3x0g';
+
+//This function create the map to load onto your web browser
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    center: [-118.2680, 34.0622],
+    zoom: 9.48,
+    bearing: 24.3,
+    pitch: 0,
+    hash:true
+});
+
+//This are the locations for your map to move along with your story
+//This is variable created an object called an JSON, you can add and remove chapters to the story. Make sure you reflect the changes in the sections with the text of your story.    
+var chapters = {
+    'losangeles': {
+        bearing: 0,
+        center: [-118.2680, 34.0622],
+        zoom: 9.48,
+        bearing: 24.3,
+        pitch: 0,
+    },
+    'boyleheights': {
+        duration: 6000,
+        center: [-118.2120, 34.0323],
+        bearing: -57.3,
+        zoom: 13.63,
+        pitch: 60
+    },
+    'centralave': {
+        bearing: 0,
+        center: [-118.25617347611393, 34.00672273556911],
+        zoom: 17.93466266150457,
+        pitch: 0,
+        speed: 0.5
+    },
+    'chavezravine': {
+        bearing: 14.148182586771325,
+        center: [-118.23789479255632, 34.081204647758256],
+        zoom: 14.693153872009281,
+        pitch: 0,
+        speed:0.5
+    },
+    'watts': {
+        bearing: 0,
+        center: [-118.24182004928838, 33.938957715132304],
+        zoom: 16.199692253005175,
+        pitch: 0,
+        speed: 0.5
+    },
+    'unionstation': {
+        bearing: -0.00572483752739572,
+        center: [-118.23536853348772, 34.05573545250901],
+        zoom: 16.296950429322905,
+        pitch: 0
+    }
+};
+
+    
+//Function to run the story    
+// On every scroll event, check which element is on screen
+window.onscroll = function() {
+    var chapterNames = Object.keys(chapters);
+    for (var i = 0; i < chapterNames.length; i++) {
+        var chapterName = chapterNames[i];
+        if (isElementOnScreen(chapterName)) {
+            setActiveChapter(chapterName);
+            break;
+        }
+    }
+};
+
+var activeChapterName = 'losangeles'; //Change this to match the first chapter of your story
+function setActiveChapter(chapterName) {
+    if (chapterName === activeChapterName) return;
+
+    map.flyTo(chapters[chapterName]);
+
+    document.getElementById(chapterName).setAttribute('class', 'active');
+    document.getElementById(activeChapterName).setAttribute('class', '');
+
+    activeChapterName = chapterName;
+}
+
+function isElementOnScreen(id) {
+    var element = document.getElementById(id);
+    var bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+//End of function to run the story    
+    
+
+//This JS Function asks Mapbox to get the bearing/center/zoom/pitch of the mouse position when clicked.
+//To turn off this function, add a "/*" at the beginning of the function and a "*/" at the end. This will turn the function into a comment.
+map.on('click', function (e) {
+    // e.lngLat is the longitude, latitude geographical position of the event
+    var loglatlng = e;
+    console.log(e);
+    prompt("Copy to clipboard: Ctrl+C, Enter",
+        "bearing: "+map.getBearing()+",\n"+
+        "center: ["+e.lngLat.lng+", "+e.lngLat.lat+"],\n"+
+        "zoom: "+map.getZoom()+",\n"+
+        "pitch: "+map.getPitch()
+    );
+});    
+
+</script>
+
+</body>
+</html>
