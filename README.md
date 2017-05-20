@@ -18,4 +18,16 @@ Use this repo to make ready to go story maps with either Leaflet or MapboxGL JS 
 3. We need to  `fork` this repository to your account, because right now its being hosted through maptimeLA's account. Creating a `fork` is producing a personal copy of someone else's project in this case maptimeLA's. [Want to know more about forking?](https://guides.github.com/activities/forking/)
 4. Fork this repo by clicking on the button labeled fork.
 ![Forking](https://github-images.s3.amazonaws.com/help/bootcamp/Bootcamp-Fork.png)
-5. A window will appear and will ask you where you want it forked, select your account.
+5. A window will appear and will ask you where you want it forked, select your account and watch it fork!
+![image](https://cloud.githubusercontent.com/assets/6407796/26274288/b8970926-3cfb-11e7-8f6d-8910a70784b2.png)
+6. Once complete, it should load the repo with your account name and the name of the repo. For example user `cityhubla` has forked the `storymap_tutorial` from maptimeLA
+![image](https://cloud.githubusercontent.com/assets/6407796/26274301/f40cd49a-3cfb-11e7-8de3-8669213d521e.png)
+7. Now we're close to getting some maps up and running but we need to change some things because they are referencing maptimeLA's repo.
+8. Click on the settings button
+![image](https://cloud.githubusercontent.com/assets/6407796/26274324/480da09c-3cfc-11e7-99db-828747c202a3.png)
+9. In the settings, scroll down to the section labeled `Github Pages`. You will notice options for getting github to host your files (ie maps)
+10. In the `Source` option, select master branch and hit save.
+![image](https://cloud.githubusercontent.com/assets/6407796/26274336/800bc0d2-3cfc-11e7-9db4-d4858a2283c2.png)
+11. The page will reload and scroll back down to the `Github Pages` section, you will see a note that says, `Your site is ready to be published at...' with a link. This is your link to your pages which you can hand out to friends and family.
+
+
