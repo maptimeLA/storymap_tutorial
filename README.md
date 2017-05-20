@@ -35,7 +35,7 @@ Use this repo to make ready to go story maps with either Leaflet or MapboxGL JS 
 14. Now you have a link to a live web map you can modify! Click on it and see a storymap of LA! (Note: It may take Github a minute or so to reflect the changes to your account, the map may not load. Give it some time and it should appear.)
 15. This particular webmap `index.html` is using the mapboxGL javascript mapping library.
 
-### To Raster or to Vector?
+### Files in this Repo
 You will notice in your repo, two folders named `leaflet` and `mapbox`, these contain example maps using these libraries.
 
 You can try out the maps here,
