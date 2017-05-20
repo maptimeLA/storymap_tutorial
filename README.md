@@ -18,3 +18,4 @@ Use this repo to make ready to go story maps with either Leaflet or MapboxGL JS 
 3. We need to  `fork` this repository to your account, because right now its being hosted through maptimeLA's account. Creating a `fork` is producing a personal copy of someone else's project in this case maptimeLA's. [Want to know more about forking?](https://guides.github.com/activities/forking/)
 4. Fork this repo by clicking on the button labeled fork.
 ![Forking](https://github-images.s3.amazonaws.com/help/bootcamp/Bootcamp-Fork.png)
+5. A window will appear and will ask you where you want it forked, select your account.
